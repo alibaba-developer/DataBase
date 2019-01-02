@@ -34,7 +34,7 @@ OceanBase是一个通用的分布式的关系型数据库，有很多独特的�
 首先简介一下OceanBase集群的外观。
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用1.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用1.png" width="480" height="347" align="center" />
 
 图 1 OceanBase集群外观
 </div>
@@ -89,7 +89,7 @@ OceanBase里描述数据的最小粒度是分区。普通的表（非分区表�
 租户的示意图如下。租户之间数据是绝对隔离，资源有一定程度隔离。研发可以将业务先垂直拆分为多个独立的子业务，分别使用不同的租户或者集群。
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用2.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用2.png" width="480" height="347" align="center" />
 
 图2 OceanBase多租户示意图
 </div>
@@ -108,7 +108,7 @@ OceanBase里描述数据的最小粒度是分区。普通的表（非分区表�
  
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用3.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用3.png" width="480" height="347" align="center" />
 
 图 3 OceanBase 资源池分配示意图
 </div>
@@ -144,7 +144,7 @@ OceanBase里描述数据的最小粒度是分区。普通的表（非分区表�
 水平拆分示意图如下：
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用4.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用4.png" width="480" height="347" align="center" />
 
 图 4  水平拆分的分库分表和分区表
 </div>
@@ -179,7 +179,7 @@ OceanBase在确定Unit里的分区的位置时会尽量让每个节点的负载�
  
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用5.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用5.png" width="480" height="347" align="center" />
 
 图5 分区在资源单元中的位置
 </div>
@@ -195,7 +195,7 @@ OceanBase在确定Unit里的分区的位置时会尽量让每个节点的负载�
  
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用5.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用5.png" width="480" height="347" align="center" />
 
 图5中t0和t1业务上是有联系的表（如主表和详情表），两者都是分区表，分区策略和分片数都相同，OceanBase提供了一个表属性“表分组”（TableGroup）。设置为同一个表分组的不同表的分区数一定一样，并且同号分区组成一个“分区分组”（PartitionGroup）。同一个分区分组的分区一定会分配在同一个资源单元（Unit）内部（也就是会在同一个节点内部），彼此的连接逻辑就避免了跨节点请求。另外一个效果是如果一个事务同时修改两个有业务关联的分区，使用分区分组也可以规避跨节点的分布式事务。这个表分组属性的设置就是OceanBase的Locality特性之一——影响相关分区的分布。
 </div>
@@ -265,7 +265,7 @@ create tenantgroup tgtrade tenant_array=('obtrade0', 'obpay0');
  
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用6.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用6.png" width="480" height="347" align="center" />
 
 图 6 OceanBase集群异地多活水平拆分示意图
 </div>
@@ -288,7 +288,7 @@ create tenantgroup tgtrade tenant_array=('obtrade0', 'obpay0');
 上面要实现OceanBase在每个Zone的应用写入都是恰好是本地访问，关键点就是应用流量水平拆分规则跟数据水平拆分规则保持一致。而应用要维持这样一个规则，需要很多产品都要支持水平拆分等。如下图
 
 <div style="text-align:center" align="center">
-<img src="/OceanBase/images/OceanBase构建应用7.png" align="center" />
+<img src="/OceanBase/images/OceanBase构建应用7.png" width="480" height="347" align="center" />
 
 图 7 应用三地五中心多活解决方案
 </div>
